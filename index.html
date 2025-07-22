@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khám phá Hà Nội</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    .map-container {
+      height: 500px;
+      width: 100%;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #343a40;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Khám phá Hà Nội</h1>
+    <p>Thủ đô ngàn năm văn hiến của Việt Nam</p>
+  </header>
+
+  <section>
+    <h2>Giới thiệu</h2>
+    <p>Hà Nội – trái tim của Việt Nam, không chỉ nổi bật với lịch sử lâu đời và văn hóa đặc sắc mà còn hấp dẫn bởi vẻ đẹp cổ kính xen lẫn hiện đại. Từ 36 phố phường nhộn nhịp đến Hồ Gươm thơ mộng, mỗi góc phố, con đường đều mang dấu ấn thời gian.</p>
+    
+    <h2>Hình ảnh nổi bật</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Hoan_Kiem_Lake_Hanoi.jpg" alt="Hồ Gươm - Hà Nội">
+    
+    <h2>Bản đồ Hà Nội</h2>
+    <div id="map" class="map-container"></div>
+  </section>
+
+  <footer>
+    &copy; 2025 Khám phá Hà Nội | Thiết kế bởi AI
+  </footer>
+
+  <!-- Google Maps Script -->
+  <script>
+    function initMap() {
+      const hanoi = { lat: 21.0285, lng: 105.8542 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 13,
+        center: hanoi,
+      });
+      new google.maps.Marker({
+        position: hanoi,
+        map: map,
+        title: "Hà Nội, Việt Nam"
+      });
+    }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhzfv9MEoKxQgSPu59IguOtWxGY-PYNUQ&callback=initMap">
+  </script>
+</body>
+</html>
